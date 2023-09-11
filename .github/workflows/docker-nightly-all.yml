@@ -1,6 +1,6 @@
 name: Docker Nightly All Build
 on:
-#  push:
+  push:
   schedule:
     - cron: '0 0 * * *'
 
