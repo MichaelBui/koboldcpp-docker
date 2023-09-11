@@ -7,10 +7,9 @@ WORKDIR /koboldcpp
 # Install git
 RUN apt-get update && apt-get install -y git \
     build-essential \
-    libopenblas-dev \
     && git clone https://github.com/LostRuins/koboldcpp.git --branch v1.43 ./ \
     && pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt \
-    && make LLAMA_OPENBLAS=1 \
+    && make \
     && apt-get clean s&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Make port 80 available to the world outside this container
