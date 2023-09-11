@@ -1,8 +1,8 @@
 name: Docker Nightly All Build
 on:
   push:
-  schedule:
-    - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'
 
 jobs:
   nightly-build-and-push:
@@ -42,5 +42,5 @@ jobs:
           push: true
           file: Dockerfile_cpu
           build-args: BUILD_DATE=${{ env.BUILD_DATE }},VERSION_TAG=${{ env.VERSION_TAG }}
-          tags: MichaelBui/koboldcpp-docker:cpu-nightly
+          tags: michaelbui/koboldcpp-docker:cpu-1.4.3, michaelbui/koboldcpp-docker:cpu
 
