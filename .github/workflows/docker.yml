@@ -1,4 +1,4 @@
-name: Docker Nightly All Build
+name: Docker
 on:
   push:
   # schedule:
@@ -42,5 +42,5 @@ jobs:
           push: true
           file: Dockerfile_cpu
           build-args: BUILD_DATE=${{ env.BUILD_DATE }},VERSION_TAG=${{ env.VERSION_TAG }}
-          tags: michaelbui/koboldcpp-docker:cpu-1.43, michaelbui/koboldcpp-docker:cpu
+          tags: michaelbui/koboldcpp-docker:1.43, michaelbui/koboldcpp-docker:1.43-openblas, michaelbui/koboldcpp-docker:cpu-1.43-openblas-noavx2
 
