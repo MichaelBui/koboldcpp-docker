@@ -39,7 +39,10 @@ jobs:
         name: Build and push - CPU
         uses: docker/build-push-action@v4
         with:
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           push: true
+          context: .
           file: Dockerfile_cpu
           build-args: BUILD_DATE=${{ env.BUILD_DATE }},VERSION_TAG=${{ env.VERSION_TAG }}
           tags: michaelbui/koboldcpp-docker:1.43, michaelbui/koboldcpp-docker:1.43-openblas, michaelbui/koboldcpp-docker:cpu-1.43-openblas-noavx2
